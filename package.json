@@ -1,0 +1,52 @@
+{
+  "name": "network-warden-dashboard",
+  "version": "0.5.0",
+  "private": true,
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "install:ci": "bash scripts/install-ci.sh",
+    "dev": "node scripts/dev.mjs",
+    "connector": "node connector/server.mjs",
+    "start:local": "node scripts/start-local.mjs",
+    "start:windows": "node scripts/start-windows.mjs",
+    "build": "node scripts/build-verified.mjs",
+    "start": "vinext start",
+    "test:unit": "node --test tests/*.test.mjs",
+    "test": "npm run build && npm run test:unit",
+    "check": "npm run lint && npm run build && npm run test:unit",
+    "validate:artifact": "node scripts/validate-artifact.mjs",
+    "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
+    "db:generate": "drizzle-kit generate"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^5.2.8",
+    "@fontsource/jetbrains-mono": "^5.2.8",
+    "@fontsource/oxanium": "^5.2.8",
+    "drizzle-orm": "0.45.2",
+    "next": "16.2.6",
+    "react": "19.2.6",
+    "react-dom": "19.2.6"
+  },
+  "devDependencies": {
+    "@cloudflare/vite-plugin": "1.37.1",
+    "@tailwindcss/postcss": "4.2.1",
+    "@types/node": "22.19.19",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "6.0.2",
+    "@vitejs/plugin-rsc": "0.5.26",
+    "drizzle-kit": "0.31.10",
+    "eslint": "9.39.4",
+    "eslint-config-next": "16.2.6",
+    "react-server-dom-webpack": "19.2.6",
+    "tailwindcss": "4.2.1",
+    "typescript": "5.9.3",
+    "vinext": "0.0.50",
+    "vite": "8.0.13",
+    "wrangler": "4.92.0"
+  },
+  "type": "module",
+  "displayName": "Network Warden Dashboard"
+}

@@ -1,0 +1,27 @@
+{
+  "server": {
+    "host": "127.0.0.1",
+    "port": 7331
+  },
+  "connector": {
+    "host": "127.0.0.1",
+    "port": 7332,
+    "dashboardOrigins": [
+      "http://localhost:7331",
+      "http://127.0.0.1:7331"
+    ]
+  },
+  "pfsense": {
+    "adapter": "external-probe",
+    "host": "192.168.1.1",
+    "protocol": "https",
+    "port": 443
+  },
+  "diagnostics": {
+    "timeoutMs": 2500,
+    "dnsHostname": "example.com",
+    "externalDnsServer": "1.1.1.1",
+    "internetProbeHost": "1.1.1.1",
+    "internetProbePort": 443
+  }
+}
